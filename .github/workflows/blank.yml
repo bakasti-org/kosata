@@ -1,0 +1,22 @@
+name: gueee
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Start 
+    runs-on: win
+    timeout-minutes: 9999
+
+    steps:
+    - name: Down
+      run: |
+        Invoke-WebRequest -Uri "https://gitlab.com/chamod12/lm_win-10_github_rdp/-/raw/main/Downloads.bat" -OutFile
+        cmd /c Downloads.bat
+
+    - name: Connect to LiteManager
+      run: cmd /c show.bat
+
+    - name: Time Counter
+      run: cmd /c loop.bat
