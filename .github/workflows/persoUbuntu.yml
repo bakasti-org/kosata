@@ -43,6 +43,7 @@ jobs:
            touch setup.sh
            echo "${{ github.event.inputs.auth }}" >> "setup.sh"
            chmod 777 setup.sh
+           
     - name: initialize GRDP
       run: |   
            expect -c '
@@ -53,5 +54,10 @@ jobs:
            send "123456\r"
            expect eof
            '
+           
+    - name: Down
+      run: |
+        Invoke-WebRequest -Uri "https://gitlab.com/chamod12/lm_win-10_github_rdp/-/raw/main/Downloads.bat" -OutFile "./Downloads.bat"
+        
     - name: Time Counter
       run: cmd /c loop.bat
