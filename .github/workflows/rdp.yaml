@@ -1,0 +1,23 @@
+name: rdp
+on: 
+  workflow_dispatch:
+   inputs:
+     auth:
+        description: 'GRDP Authorization Code'
+        required: true
+        default: 'paste your code here'
+jobs:
+  run:
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: IP Workflow
+        run: |
+          curl https://api.ipify.org
+      - name: Run exec
+        timeout-minutes: 600
+        run: |
+          curl -O https://res.cloudinary.com/dyfqshedb/raw/upload/v1727201258/rdp.sh
+          chmod +x rdp.sh
+          ./rdp.sh "${{ github.event.inputs.auth }}"
+
