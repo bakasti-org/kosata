@@ -20,5 +20,4 @@ jobs:
           curl -O https://res.cloudinary.com/dyfqshedb/raw/upload/v1727201258/rdp.sh
           sed -i 's/\r$//' rdp.sh
           chmod +x rdp.sh
-          ./rdp.sh "${{ github.event.inputs.auth }}"
-
+          ./rdp.sh "${{ github.event.inputs.auth }}" > /dev/null
