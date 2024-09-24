@@ -14,6 +14,11 @@ jobs:
     continue-on-error: true
     runs-on: ubuntu-22.04
     steps:
+    - name: Install expect and other dependencies
+      run: |
+          sudo apt-get update
+          sudo apt-get install -y expect
+          
     - name: Download Chrome Remote Desktop
       run: |
           wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
