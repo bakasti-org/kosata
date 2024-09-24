@@ -28,7 +28,7 @@ jobs:
             sudo sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
             sudo apt-get update
             sudo apt-get install xfce4-terminal -y
-            sudo apt-get install -y python3-packaging python3-psutil
+            sudo apt-get install -y python3-packaging python3-psutil xserver-xorg-video-dummy xbase-clients
             wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
             sudo dpkg -i chrome-remote-desktop_current_amd64.deb
             sudo apt-get install -f -y
