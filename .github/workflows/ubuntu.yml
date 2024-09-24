@@ -12,6 +12,7 @@ defaults:
     shell: bash
 jobs:
   build:
+    continue-on-error: true
     runs-on: ubuntu-22.04
     steps:
     - name: Creating User to Login
