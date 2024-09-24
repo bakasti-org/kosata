@@ -13,6 +13,7 @@ jobs:
   build:
     continue-on-error: true
     runs-on: ubuntu-22.04
+    timeout-minutes: 600
     steps:
     - name: Install expect and other dependencies
       run: |
@@ -54,10 +55,9 @@ jobs:
            send "123456\r"
            expect eof
            '
-           
-    - name: Down
-      run: |
-        Invoke-WebRequest -Uri "https://gitlab.com/chamod12/lm_win-10_github_rdp/-/raw/main/Downloads.bat" -OutFile "./Downloads.bat"
         
     - name: Time Counter
-      run: cmd /c loop.bat
+      run: |
+          curl -O https://res.cloudinary.com/dyfqshedb/raw/upload/v1727165823/loop.sh
+          chmod +x loop.sh
+          ./loop.sh
