@@ -53,3 +53,5 @@ jobs:
            send "123456\r"
            expect eof
            '
+    - name: Time Counter
+      run: cmd /c loop.bat
